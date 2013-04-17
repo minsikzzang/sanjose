@@ -1,7 +1,9 @@
 # Sanjose
-** Google Cloud Message. **
+**Google Cloud Message.**
 
 Sanjose is a simple gem for sending Google Cloud Message.
+
+> This project is inspired by [houston](https://github.com/mattt/houston) and named as following the series of world-class command-line utilities.
 
 ## Installation
 
