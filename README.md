@@ -37,6 +37,21 @@ notification.data = {foo: "bar"}
 GCM.push(notification)
 ```
 
+## Command Line Tool
+
+Sanjose also comes with the `gcm` binary, which provides a convenient way to test notifications from the command line.
+
+    $ gcm push "<regstration_id>" -k "<api_key>" -c "Hello from the command line!"
+    
+With custom data support
+
+    $ gcm push "<regstration_id>" -k "<api_key>" -c "Hello from the command line!" -d "{\"foo\":\"bar\"}"
+
+
+## Enabling Google Cloud Message on Android
+
+There is tutorial for Google Cloud Message [Getting started](http://developer.android.com/google/gcm/index.html) from Google.
+
 ## Contact
 
 Min Kim

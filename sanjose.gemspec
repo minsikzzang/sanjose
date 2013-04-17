@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.version       = Sanjose::VERSION
   s.authors       = ["Min Kim"]
   s.email         = ["minsikzzang@gmail.com", "minsik.kim@livestation.com"]
-  s.description   = "Send Google Cloud Message"
-  s.summary       = "Sanjose is a simple gem for sending Google Cloud Message"
+  s.summary       = "Send Google Cloud Messages"
+  s.description   = "Sanjose is a simple gem for sending Google Cloud Messages"
   s.homepage      = "http://github.com/minsikzzang/sanjose"
 
   s.add_dependency "commander", "~> 4.1.2"

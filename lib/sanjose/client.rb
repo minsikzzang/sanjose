@@ -73,7 +73,9 @@ module Sanjose
       end
         
       # build a new object with the overall result
-      multicast_id = muticast_ids.pop(0)
+      multicast_id = muticast_ids.at(0)
+      muticast_ids.delete(multicast_id)
+      
       builder = MulticastResult.new(
         :success => success, 
         :failure => failure, 
