@@ -19,6 +19,7 @@ Or install it yourself as:
 
 ## Usage
 
+```ruby
 GCM = Sanjose::Client.new
 GCM.gcm_api_key = "AIzaSyApdin5fMuTSGtW-OTC9gJrm2qz1hJPUzk"
 
