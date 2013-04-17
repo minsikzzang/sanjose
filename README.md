@@ -30,7 +30,7 @@ registration_id = "APA91bH35MqYza3xfc2hfag6Rr8VQPSOmi2nrUOPABlFwowfVMZNHaBGBpx-z
 
 # Create a notification that alerts a message to the user.
 notification = Sanjose::Notification.new(devices: [registration_id])
-notification.collapse_key = "Hello, World!"
+notification.collapse_key = "fooBar"
 notification.data = {foo: "bar"}
 
 # And... sent! That's all it takes.
@@ -41,11 +41,11 @@ GCM.push(notification)
 
 Sanjose also comes with the `gcm` binary, which provides a convenient way to test notifications from the command line.
 
-    $ gcm push "<regstration_id>" -k "<api_key>" -c "Hello from the command line!"
+    $ gcm push "<regstration_id>" -k "<api_key>" -c "fooBar"
     
 With custom data support
 
-    $ gcm push "<regstration_id>" -k "<api_key>" -c "Hello from the command line!" -d "{\"foo\":\"bar\"}"
+    $ gcm push "<regstration_id>" -k "<api_key>" -c "fooBar" -d "{\"foo\":\"bar\",\"message\":\"Hello from the command line!\"}"
 
 
 ## Enabling Google Cloud Message on Android
