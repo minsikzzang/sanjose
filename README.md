@@ -32,7 +32,7 @@ notification.collapse_key = "Hello, World!"
 notification.data = {foo: "bar"}
 
 # And... sent! That's all it takes.
-APN.push(notification)
+GCM.push(notification)
 ```
 
 ## Contact
