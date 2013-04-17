@@ -50,7 +50,7 @@ With custom data support
 
 ## Enabling Google Cloud Message on Android
 
-There is tutorial for Google Cloud Message [Getting started](http://developer.android.com/google/gcm/index.html) from Google.
+There is tutorial for Google Cloud Message [Getting started](http://developer.android.com/google/gcm/gs.html) from Google.
 
 ## Contact
 
