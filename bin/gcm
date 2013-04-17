@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+
+require 'commander/import'
+
+require 'sanjose'
+
+HighLine.track_eof = false # Fix for built-in Ruby
+Signal.trap("INT") {} # Suppress backtrace when exiting command
+
+program :version, Sanjose::VERSION
+program :description, 'A command-line interface for sending push notifications for Android'
+
+program :help, 'Author', 'Min Kim <minsikzzang@gmail.com>'
+program :help, 'Website', 'https://github.com/minsikzzang'
+program :help_formatter, :compact
+
+default_command :help
+
+command :push do |c|
+  client = Sanjose::Client.new
+  client.gcm_api_key = "AIzaSyApdin5fMuTSGtW-OTC9gJrm2qz1hJPUzk"
+  a = "APA91bH35MqYza3xfc2hfag6Rr8VQPSOmi2nrUOPABlFwowfVMZNHaBGBpx-zQ7nuv9qzCEosepUMPKyOrVn0UncZMa__E2sWuM2Q53fjJ5loqIY1QKCza3MkxAu1rvyhhzJP3meEqpmv-kjBuRTeWe_ysRUICupE-awrK1eiStmmm2Y_VBBSs4"
+  b = "APA91bHAX-Owu0Ulm5XubHs7BYy6a4O87Gk8-2JOW3eJ2TauVzWsB0d4yCxjzxMXl40elIIwG3E0Lpvd1_5xGldZm64UO4fqC0RNpvGWKUSr7hMNhavRS8w2NS2XUwYsluysVaXZU0rvmq0zSCH6JHGZiqd0qlUsmg"
+  
+  notification = Sanjose::Notification.new(devices: [b])
+  notification.data = {foo: "bar"}
+  notification.collapse_key = "Hello, World!"
+  
+  begin
+    client.push(notification)
+  rescue => e
+    say_error "Exception sending notification: #{e}" and abort
+  end
+
+  say_ok "Push notifications successfully sent"
+end
