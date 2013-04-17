@@ -58,7 +58,8 @@ command :push do |c|
     notification.time_to_live = @time_to_live
     
     begin
-      client.push(notification)
+      results = client.push(notification)
+      puts results.inspect
     rescue => e
       say_error "Exception sending notification: #{e}" and abort
     end
